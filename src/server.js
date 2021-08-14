@@ -8,9 +8,10 @@ const app = express();
 app.set('view engine', 'pug')
 // views directory 설정하는 것.
 app.set('views', __dirname + "/views");
-// creating public url
+// creating public url expose public folder to users
 app.use("/public", express.static(__dirname + "/public"));
 
+// rendering template
 app.get("/", (req, res) => res.render("home"));
 
 const handleListen = () => console.log('Listening on http://localhost:3000')
